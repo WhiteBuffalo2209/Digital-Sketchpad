@@ -2,13 +2,14 @@ h1{
     color: brown;
 }
 .container{
-    border: 10px solid orange;
-    width: 200px;
-    height: 200px;
+    border: 1px solid blue;
+    width: 600px;
+    height: 600px;
     display: flex;
     flex-wrap: wrap;
 }
 .content{
-    border: 5px solid red;
-    flex: 1;
+    border: 1px solid red;
+    width: 35.5px;  /* border 2pc must be deducted */
+    height: 35.5px;
 }
