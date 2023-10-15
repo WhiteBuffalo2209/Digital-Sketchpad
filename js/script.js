@@ -10,7 +10,7 @@ function addDiv(){
 const container = document.querySelector('.container');
 let content;
 
-let gridCount = 8;
+let gridCount = 16;
 
 for (i=0 ; i < gridCount**2 ; i++){
     addDiv()

@@ -1,6 +1,12 @@
 h1{
     color: brown;
 }
+.center{
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    background-color: aquamarine;
+}
 .container{
     border: 1px solid blue;
     width: 600px;
