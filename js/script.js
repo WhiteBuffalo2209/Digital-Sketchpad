@@ -35,4 +35,6 @@ triggers.forEach(trigger => trigger.addEventListener('mouseenter', (e) => {
     }
 }));
 
+//button grid count
+
 

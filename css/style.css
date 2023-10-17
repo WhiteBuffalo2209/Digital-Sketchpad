@@ -17,3 +17,7 @@ h1{
 .content{
     border: 1px solid red;
 }
+button{
+    padding: 20px;
+    background-color: pink;
+}
