@@ -9,6 +9,7 @@ h1{
 }
 .container{
     border: 1px solid blue;
+    background-color: white;
     width: 600px;
     height: 600px;
     display: flex;

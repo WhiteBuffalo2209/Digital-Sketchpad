@@ -29,7 +29,7 @@ function gridGenerator(){
     }
     triggers = document.querySelectorAll('.content');
     triggers.forEach(trigger => trigger.addEventListener('mousedown', () => {
-    trigger.style.backgroundColor = generateRandomColor();
+        trigger.style.backgroundColor = generateRandomColor();
     }));
     triggers.forEach(trigger => trigger.addEventListener('mouseenter', (e) => {
         if (e.buttons === 1) {
@@ -42,14 +42,11 @@ const container = document.querySelector('.container');
 let content;
 let triggers;
 let gridCount = 8;
+
 gridGenerator();
 
-const button = document.querySelector('button'); //need checking
-button.addEventListener('click', () => {
-    gridCount = Number(prompt('Enter the number of squares per side for the new grid'));  
-    console.log(gridCount);
-});
+const button = document.querySelector('button');
+button.addEventListener('click', gridReset);
 
-//button grid count
 
 
