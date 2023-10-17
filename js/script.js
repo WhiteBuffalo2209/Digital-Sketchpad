@@ -6,6 +6,10 @@ function addDiv(){
     content.style.height = `${(600/gridCount)-2}px`;
     container.appendChild(content);
 }
+function removeDiv(){
+    triggers = document.querySelectorAll('.content');
+    triggers.forEach(trigger => trigger.remove());
+}
 function generateRandomColor(){
     let maxVal = 0xFFFFFF;
     let randomNumber = Math.random()*maxVal;
@@ -14,29 +18,37 @@ function generateRandomColor(){
     let randColor = randomNumber.padStart(6,0);
     return `#${randColor.toUpperCase()}`;
 }
+function gridReset(){
+    removeDiv();
+    gridCount = prompt('Enter the number of squares per side for the new grid');
+    gridGenerator();
+}
+function gridGenerator(){
+    for (i=0 ; i < gridCount**2 ; i++){
+        addDiv()
+    }
+    triggers = document.querySelectorAll('.content');
+    triggers.forEach(trigger => trigger.addEventListener('mousedown', () => {
+    trigger.style.backgroundColor = generateRandomColor();
+    }));
+    triggers.forEach(trigger => trigger.addEventListener('mouseenter', (e) => {
+        if (e.buttons === 1) {
+        trigger.style.backgroundColor = generateRandomColor();
+        }
+    }));
+}
 
 const container = document.querySelector('.container');
 let content;
-let gridCount = 16;
+let triggers;
+let gridCount = 8;
+gridGenerator();
 
-for (i=0 ; i < gridCount**2 ; i++){
-    addDiv()
-    console.log(`${i+1} boxes`);
-}
-
-const triggers = document.querySelectorAll('.content');
-
-triggers.forEach(trigger => trigger.addEventListener('mousedown', () => {
-    trigger.style.backgroundColor = generateRandomColor();
-}));
-triggers.forEach(trigger => trigger.addEventListener('mouseenter', (e) => {
-    if (e.buttons === 1) {
-        trigger.style.backgroundColor = generateRandomColor();
-    }
-}));
-
-const button = document.querySelector('button');
-
+const button = document.querySelector('button'); //need checking
+button.addEventListener('click', () => {
+    gridCount = Number(prompt('Enter the number of squares per side for the new grid'));  
+    console.log(gridCount);
+});
 
 //button grid count
 
