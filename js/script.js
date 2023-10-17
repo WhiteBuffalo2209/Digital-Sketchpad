@@ -35,6 +35,9 @@ triggers.forEach(trigger => trigger.addEventListener('mouseenter', (e) => {
     }
 }));
 
+const button = document.querySelector('button');
+
+
 //button grid count
 
 
