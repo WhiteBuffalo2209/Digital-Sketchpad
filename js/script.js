@@ -19,9 +19,20 @@ for (i=0 ; i < gridCount**2 ; i++){
 }
 
 const triggers = document.querySelectorAll('.content');
-triggers.forEach(trigger => trigger.addEventListener('mouseenter', () => {
+triggers.forEach(trigger => trigger.addEventListener('mousedown', () => {
     trigger.classList.add('up');
 }));
+
+triggers.forEach(trigger => trigger.addEventListener('mouseenter', (e) => {
+    console.log(e);
+    if (e.buttons === 1) {
+        trigger.classList.add('up');
+    }
+    //e.buttons === 1
+    //target === div.content.up
+}));
+
+
 
 
 
