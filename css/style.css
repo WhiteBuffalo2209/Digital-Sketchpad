@@ -16,7 +16,7 @@ h1{
     flex-wrap: wrap;
 }
 .content{
-    border: 1px solid red;
+    border: 1px solid white;
 }
 button{
     padding: 20px;
