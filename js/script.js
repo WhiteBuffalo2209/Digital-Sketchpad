@@ -6,28 +6,6 @@ function addDiv(){
     content.style.height = `${(600/gridCount)-2}px`;
     container.appendChild(content);
 }
-
-const container = document.querySelector('.container');
-let content;
-
-let gridCount = 16;
-
-for (i=0 ; i < gridCount**2 ; i++){
-    addDiv()
-    console.log(`${i+1} boxes`);
-}
-
-const triggers = document.querySelectorAll('.content');
-triggers.forEach(trigger => trigger.addEventListener('mousedown', () => {
-    trigger.style.backgroundColor = generateRandomColor();
-}));
-
-triggers.forEach(trigger => trigger.addEventListener('mouseenter', (e) => {
-    if (e.buttons === 1) {
-        trigger.style.backgroundColor = generateRandomColor();
-    }
-}));
-
 function generateRandomColor(){
     let maxVal = 0xFFFFFF;
     let randomNumber = Math.random()*maxVal;
@@ -37,12 +15,24 @@ function generateRandomColor(){
     return `#${randColor.toUpperCase()}`;
 }
 
+const container = document.querySelector('.container');
+let content;
+let gridCount = 16;
 
+for (i=0 ; i < gridCount**2 ; i++){
+    addDiv()
+    console.log(`${i+1} boxes`);
+}
 
+const triggers = document.querySelectorAll('.content');
 
+triggers.forEach(trigger => trigger.addEventListener('mousedown', () => {
+    trigger.style.backgroundColor = generateRandomColor();
+}));
+triggers.forEach(trigger => trigger.addEventListener('mouseenter', (e) => {
+    if (e.buttons === 1) {
+        trigger.style.backgroundColor = generateRandomColor();
+    }
+}));
 
-
-
-//create git branch
-//create event listerner for mousedown
 
